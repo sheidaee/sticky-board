@@ -1,0 +1,41 @@
+@import "../../sass/config";
+
+.row {
+    max-width: $grid-with;
+    margin: 0 auto;
+    @include clearfix;
+    [class*="col"] {
+        float: left;
+        &:nth-child(4n + 4) {
+            margin-bottom: $gutter-horizontal;
+        }
+        &:not(:nth-child(4n + 4)) {
+            margin-right: $gutter-horizontal;
+            @include respond(tab-port) {
+                margin-right: 0;
+            }
+        }
+        @include respond(tab-port) {
+            width: 100% !important;
+            margin-bottom: $gutter-vertical-small !important;
+        }
+    }
+    .col1Of2 {
+        width: calc((100% - #{$gutter-horizontal}) / 2);
+    }
+    .col1Of3 {
+        width: calc((100% - 2 * #{$gutter-horizontal}) / 3);
+    }
+    .col2Of3 {
+        width: calc(2 * ((100% - 2 * #{$gutter-horizontal}) / 3) + #{$gutter-horizontal});
+    }
+    .col1Of4 {
+        width: calc((100% - 3 * #{$gutter-horizontal}) / 4);
+    }
+    .col2Of4 {
+        width: calc(2 * ((100% - 3 * #{$gutter-horizontal}) / 4) + #{$gutter-horizontal});
+    }
+    .col3Of4 {
+        width: calc(3 * ((100% - 3 * #{$gutter-horizontal}) / 4) + (2 * #{$gutter-horizontal}));
+    }
+}

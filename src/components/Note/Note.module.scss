@@ -1,0 +1,77 @@
+@import "../../sass/style";
+ 
+.note {
+    height: 20rem;
+    background-color: $color-primary;
+    overflow-y: hidden;
+    -webkit-box-shadow: .5rem .5rem 1.5rem 0 rgba($color-black, .2);
+    box-shadow: .5rem .5rem 1.5rem 0 rgba($color-black, .2);
+    margin: .2rem 0;
+    padding: 1.5rem;
+    position: relative;
+    &:hover {
+        padding-right: 0;
+        .body {
+            height: 95%;
+            width: 99%;
+        }
+        [class*=iconSmallClose] {
+            opacity: 1;
+        }
+        [class*=iconSmallEdit] {
+            opacity: 1;
+        }
+        [class*=iconSmallSave] {
+            opacity: 1;
+        }
+    }
+    .body {
+        div {
+            width: 22.3rem;
+            margin-bottom: 1rem;
+            @include respond(tab-port) {
+                width: 100%;
+            }
+            input[type=text],
+            input[type=email],
+            select,
+            textarea {
+                width: inherit;
+                padding: .7rem;
+                border-radius: .3rem;
+                border: .1rem solid $color-form-element-border;
+            }
+            textarea {
+                height: 10rem;
+            }
+            input[type=checkbox] {
+                margin: 1rem .5rem 1rem 0;
+            }
+            *:focus {
+                outline: none;
+            }
+            input[type=submit] {
+                cursor: pointer;
+            }
+        }
+    }
+} 
+
+.scrollbar {
+    &::-webkit-scrollbar-track {
+        margin: .8rem 0;
+        @extend %custom-scrollbar;
+        background-color: $color-grey-light;
+    }
+    &::-webkit-scrollbar {
+        width: 1rem;
+        background-color: $color-primary;
+    }
+    &::-webkit-scrollbar-thumb {
+        @extend %custom-scrollbar;
+        background-color: $color-grey-dark;
+    }
+    &:hover {
+        overflow-y: auto;
+    }
+}

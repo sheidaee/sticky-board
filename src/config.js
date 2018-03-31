@@ -1,0 +1,8 @@
+const CONFIG = {
+    TITLE_MIN_LENGTH: 0,
+    TITLE_MAX_LENGTH: 120,
+    NOTE_MIN_LENGTH: 1,
+    NOTE_MAX_LENGTH: 1000,
+};
+
+export default CONFIG;

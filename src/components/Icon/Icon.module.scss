@@ -1,0 +1,46 @@
+@import "../../sass/config";
+$fa-font-path: '../../../node_modules/font-awesome/fonts';
+@import "~font-awesome/scss/font-awesome";
+
+.iconSmall {
+    display: inline-block;
+    width: 3rem;
+    text-align: center;
+    color: $color-note-btn;
+    font-size: 2rem;
+    margin-right: 1rem;
+    line-height: 2.3rem;
+    vertical-align: middle;
+    cursor: pointer;
+    @extend .fa;
+    &Close {
+        opacity: 0;        
+        @extend .fa-times;        
+        display: inline;
+        position: absolute;
+        top: .2rem;
+        right: -.5rem;
+    }
+    &Edit {
+        opacity: 0;        
+        @extend .fa-pencil-square-o;
+        display: inline;
+        position: absolute;
+        bottom: .2rem;
+        left: .5rem;
+    }
+    &Save {
+        opacity: 0;
+        @extend .fa-check;
+        display: inline;
+        position: absolute;
+        bottom: .2rem;
+        right: -.5rem;
+    }
+}
+
+button {
+    [class*=iconSmall] {
+        margin-right: 0;
+    }
+}
